@@ -43,11 +43,11 @@ LARGE_FILES_GZ_SPLIT := $(addsuffix .$(ARCHIVE_EXT).00.split, $(LARGE_FILES))
 LARGE_FILES_GZ_SPLIT += $(addsuffix .00.split, $(ARCHIVES))
 
 MCW_ROOT?=$(PWD)/mgmt_core_wrapper
-MCW ?=LITEX_VEXRISCV
-MPW_TAG ?= mpw-8c
+MCW ?=PICO
+MPW_TAG ?= main
 
 # PDK switch varient
-export PDK?=sky130A
+export PDK?=sky130B
 
 # Install lite version of caravel, (1): caravel-lite, (0): caravel
 MCW_LITE?=1
@@ -58,7 +58,7 @@ ifeq ($(MCW),LITEX_VEXRISCV)
 	MCW_TAG := $(MPW_TAG)
 else
 	MCW_NAME := mcw-pico
-	MCW_REPO := https://github.com/efabless/caravel_pico
+	MCW_REPO := https://github.com/mayank-kabra2001/caravel_pico
 	MCW_TAG := $(MPW_TAG)
 endif
 
